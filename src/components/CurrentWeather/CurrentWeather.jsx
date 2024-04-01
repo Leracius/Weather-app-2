@@ -7,13 +7,12 @@ const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
 
   const convertCelsius = (kelvin) => {
-    console.log(weather.list);
     const celsius = Math.round(kelvin - 273.15);
     return celsius + 1;
   };
 
   const getCurrentWeather = () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
       const data = requestCurrent(lat, lon);

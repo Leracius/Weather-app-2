@@ -19,7 +19,6 @@ export const requestCity = (city) => {
   const query = `weather?q=${city}&appid=${key}`;
   const data = axios.get(baseURL + query).then((res) => {
     res.data.ts = formatDate(new Date());
-    console.log(res.data);
     return res;
   });
   return data;

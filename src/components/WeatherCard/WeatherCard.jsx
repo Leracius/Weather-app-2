@@ -16,8 +16,8 @@ import {
   ClimHum,
 } from "./WeatherCardStyles";
 
-export const WeatherCard = (citylist) => {
-  const cities = Object.values(citylist)[0];
+export const WeatherCard = (props) => {
+  const cities = Object.values(props)[0];
 
   const convertCelsius = (kelvin) => {
     const celsius = Math.round(kelvin - 273.15);
@@ -25,16 +25,18 @@ export const WeatherCard = (citylist) => {
   };
 
   const currentCities = (e) => {
-    const list = JSON.parse(localStorage.getItem("cities"));
-    console.log(list);
-    console.log(e.target.id);
+    e.stopPropagation();
+    const cityId = e.currentTarget.dataset.id;
+    const updatedCities = cities.filter((el) => el.id !== parseInt(cityId));
+    console.log(updatedCities);
+    props.setCities(updatedCities);
   };
 
   return cities.map((el) => {
     return (
       <Container key={el.id}>
         <CardClima>
-          <Close onClick={currentCities} id={el.id}>
+          <Close data-id={el.id} onClick={currentCities}>
             <MdDelete size={30} />
           </Close>
           <ClimaInfo>

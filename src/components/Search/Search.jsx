@@ -17,6 +17,7 @@ export const Search = () => {
       alert("Campo vacío");
       return;
     }
+    console.log(cities);
     requestCity(city)
       .then((res) => {
         const cityName = res.data.name.toLowerCase();
@@ -65,7 +66,7 @@ export const Search = () => {
       {!cities ? (
         <Wait>Ingrese una ciudad...</Wait>
       ) : (
-        <WeatherCard cityList={cities} />
+        <WeatherCard cityList={cities} setCities={setCities} />
       )}
     </Container>
   );
