@@ -54,6 +54,12 @@ main {
   padding: 60px 5%;
 }
 
+@media (max-width: 767px) {
+  main {
+    padding: 10px;
+  }
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

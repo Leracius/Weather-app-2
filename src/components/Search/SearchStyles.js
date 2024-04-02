@@ -12,6 +12,7 @@ export const Container = styled.div`
   gap: 40px;
   @media (max-width: 767px) {
     padding: 0;
+    background-color: transparent;
   }
 `;
 
@@ -28,6 +29,7 @@ export const SearchContainer = styled.div`
   @media (max-width: 767px) {
     display: flex;
     flex-direction: column;
+    border: none;
   }
   form {
     grid-area: 2 / 1 / 3 / 2;
@@ -72,6 +74,10 @@ export const Title = styled.h1`
   font-size: 40px;
   text-align: center;
   font-weight: 600;
+  @media (max-width: 767px) {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const Hour = styled.div`

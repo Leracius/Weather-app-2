@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { requestCurrent } from "../../axios/Request";
-import { TbClockHour9 } from "react-icons/tb";
-import { formatDate } from "../../axios/Request";
-import { IoMdArrowDropdownCircle } from "react-icons/io";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Forecast from "../Forecast/Forecast";
+import { Container, WeatherInfo, Flag } from "./CurrentWeatherStyles";
 
 const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
@@ -49,68 +46,12 @@ const CurrentWeather = () => {
           <button onClick={showDates(weather.list)}>check</button> */}
         </WeatherInfo>
       ) : (
-        <h1 onClick={getCurrentWeather}>Obtener info de ciudad</h1>
+        <WeatherInfo>
+          <h1 onClick={getCurrentWeather}>Obtener info de ciudad</h1>
+        </WeatherInfo>
       )}
     </Container>
   );
 };
 
 export default CurrentWeather;
-
-export const Container = styled.div`
-  height: ${({ isExpanded }) => (isExpanded ? "100px" : "400px")};
-  background-color: #15202b80;
-  transition: height 1s ease 0s;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 20px;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  margin-bottom: 20px;
-  overflow: hidden;
-  h1 {
-    border: none;
-    background-color: transparent;
-    &:hover {
-      color: #b1d8ff;
-      cursor: pointer;
-    }
-  }
-`;
-
-const WeatherInfo = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media (max-width: 767px) {
-      font-size: 30px;
-    }
-    img {
-      width: 80px;
-      @media (max-width: 767px) {
-        width: 50px;
-      }
-    }
-  }
-`;
-
-const Flag = styled.span`
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  width: 100px;
-  height: 100px;
-  @media (max-width: 767px) {
-    width: 60px;
-    top: 0;
-  }
-`;

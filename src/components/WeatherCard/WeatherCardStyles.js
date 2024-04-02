@@ -21,6 +21,7 @@ export const CardClima = styled.div`
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    border: none;
   }
 `;
 
@@ -34,10 +35,6 @@ export const Close = styled.button`
   cursor: pointer;
   border-style: none;
   background-color: transparent;
-  /* &:hover {
-    scale: 1.2;
-    color: white;
-  } */
 `;
 
 export const ClimaInfo = styled.div`

@@ -1,7 +1,5 @@
 import React from "react";
-import { formatDate } from "../../axios/Request";
-import styled from "styled-components";
-import { TbClockHour9 } from "react-icons/tb";
+import { ForecastContainer, MiniCard } from "./ForecastStyles";
 
 const Forecast = ({ forecast }) => {
   const wheatherObj = {};
@@ -18,6 +16,7 @@ const Forecast = ({ forecast }) => {
 
   return (
     <ForecastContainer>
+      pronostico extendido:
       {wheatherObj.list.map((el) => {
         const dateW = new Date(el.dt * 1000);
         const hora = dateW.getHours();
@@ -48,28 +47,3 @@ const Forecast = ({ forecast }) => {
 };
 
 export default Forecast;
-
-export const ForecastContainer = styled.div`
-  position: relative;
-  display: flex;
-  gap: 10px;
-  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
-  width: 100%;
-`;
-
-export const MiniCard = styled.div`
-  background-color: #ffffff27;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px 0;
-  h1 {
-    font-size: 50px;
-    margin: 0;
-    font-weight: 300;
-  }
-  p {
-    text-align: center;
-  }
-`;
