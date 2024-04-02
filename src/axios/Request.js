@@ -2,7 +2,7 @@ import axios from "axios";
 const key = "ec7b2b7a7d48f2c3dba577c98929e34d";
 const baseURL = "https://api.openweathermap.org/data/2.5/";
 
-function formatDate(date) {
+export function formatDate(date) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const period = hours >= 12 ? "pm" : "am";

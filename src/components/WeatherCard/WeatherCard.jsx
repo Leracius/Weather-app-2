@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { MdOutlineRefresh } from "react-icons/md";
 import { FaThermometerHalf } from "react-icons/fa";
 import { TbClockHour9 } from "react-icons/tb";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
@@ -26,10 +27,14 @@ export const WeatherCard = (props) => {
 
   const currentCities = (e) => {
     e.stopPropagation();
-    const cityId = e.currentTarget.dataset.id;
-    const updatedCities = cities.filter((el) => el.id !== parseInt(cityId));
-    console.log(updatedCities);
-    props.setCities(updatedCities);
+    if (confirm("Desea eliminar esta ciudad?")) {
+      const cityId = e.currentTarget.dataset.id;
+      const updatedCities = cities.filter((el) => el.id !== parseInt(cityId));
+      console.log(updatedCities);
+      props.setCities(updatedCities);
+    } else {
+      return;
+    }
   };
 
   return cities.map((el) => {

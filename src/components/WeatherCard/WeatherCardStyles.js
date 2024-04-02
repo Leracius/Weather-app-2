@@ -34,10 +34,10 @@ export const Close = styled.button`
   cursor: pointer;
   border-style: none;
   background-color: transparent;
-  &:hover {
+  /* &:hover {
     scale: 1.2;
     color: white;
-  }
+  } */
 `;
 
 export const ClimaInfo = styled.div`
