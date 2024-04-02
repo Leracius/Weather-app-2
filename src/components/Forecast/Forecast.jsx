@@ -16,7 +16,6 @@ const Forecast = ({ forecast }) => {
 
   return (
     <ForecastContainer>
-      pronostico extendido:
       {wheatherObj.list.map((el) => {
         const dateW = new Date(el.dt * 1000);
         const hora = dateW.getHours();

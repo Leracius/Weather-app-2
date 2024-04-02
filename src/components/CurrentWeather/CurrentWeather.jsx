@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { requestCurrent } from "../../axios/Request";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import Forecast from "../Forecast/Forecast";
-import { Container, WeatherInfo, Flag } from "./CurrentWeatherStyles";
+import {
+  Container,
+  WeatherInfo,
+  Flag,
+  TitleInfo,
+} from "./CurrentWeatherStyles";
 
 const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
@@ -33,12 +38,12 @@ const CurrentWeather = () => {
           <Flag
             className={`fi fi-${weather.city.country.toLowerCase()}`}
           ></Flag>
-          <h1 onClick={expand}>
+          <TitleInfo onClick={expand}>
             {weather.city.name} {convertCelsius(weather.list[0].main.temp)}°
-            <img
+            {/* <img
               src={`https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`}
-            ></img>
-          </h1>
+            ></img> */}
+          </TitleInfo>
           {!expanded && <Forecast forecast={weather} />}
 
           {/* <TbClockHour9 />
@@ -47,7 +52,9 @@ const CurrentWeather = () => {
         </WeatherInfo>
       ) : (
         <WeatherInfo>
-          <h1 onClick={getCurrentWeather}>Obtener info de ciudad</h1>
+          <TitleInfo onClick={getCurrentWeather}>
+            Obtener info de mi ciudad
+          </TitleInfo>
         </WeatherInfo>
       )}
     </Container>
