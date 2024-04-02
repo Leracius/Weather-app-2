@@ -7,13 +7,14 @@ export const Container = styled.div`
 `;
 
 export const CardClima = styled.div`
-  border: 5px solid #15202b80;
+  /* border: 5px solid #15202b80; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  background-color: rgba(34, 36, 71, 1);
+  background-color: #15202b80;
+  /* background-color: rgba(34, 36, 71, 1); */
   padding: 30px 10px 10px 10px;
   border-radius: 10px;
   position: relative;
@@ -50,14 +51,15 @@ export const ClimaInfo = styled.div`
   h2 {
     position: absolute;
     transform: translateY(-60px);
-    font-size: 35px;
+    font-size: 25px;
     display: flex;
     gap: 20px;
     font-weight: 600;
     border-radius: 10px;
     padding: 0 10px;
-    background-color: #222447;
-    border: 5px solid #15202b80;
+    background-color: black;
+    /* background-color: #222447; */
+    border: 5px solid white;
     @media (max-width: 767px) {
       font-size: 20px;
     }

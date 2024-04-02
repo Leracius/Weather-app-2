@@ -21,8 +21,8 @@ export const SearchContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
-  background-color: rgba(34, 36, 71, 1);
-  border: 5px solid #15202b80;
+  background-color: #15202b80;
+  /* border: 5px solid #15202b80; */
   padding: 10px;
   border-radius: 10px;
   align-items: center;
