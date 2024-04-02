@@ -84,5 +84,12 @@ export const Hour = styled.div`
   grid-area: 1 / 2 / 3 / 3;
   background-color: #15202b80;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;

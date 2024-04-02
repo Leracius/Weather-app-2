@@ -35,26 +35,17 @@ const CurrentWeather = () => {
     <Container isExpanded={expanded}>
       {weather ? (
         <WeatherInfo>
-          <Flag
-            className={`fi fi-${weather.city.country.toLowerCase()}`}
-          ></Flag>
           <TitleInfo onClick={expand}>
             {weather.city.name} {convertCelsius(weather.list[0].main.temp)}°
-            {/* <img
-              src={`https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`}
-            ></img> */}
+            <Flag
+              className={`fi fi-${weather.city.country.toLowerCase()}`}
+            ></Flag>
           </TitleInfo>
           {!expanded && <Forecast forecast={weather} />}
-
-          {/* <TbClockHour9 />
-          <p>{formatDate(new Date(weather.list[0].dt * 1000))}</p>
-          <button onClick={showDates(weather.list)}>check</button> */}
         </WeatherInfo>
       ) : (
         <WeatherInfo>
-          <TitleInfo onClick={getCurrentWeather}>
-            Obtener info de mi ciudad
-          </TitleInfo>
+          <TitleInfo onClick={getCurrentWeather}>ver mi ciudad</TitleInfo>
         </WeatherInfo>
       )}
     </Container>

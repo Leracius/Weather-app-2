@@ -61,7 +61,9 @@ export const Search = () => {
             placeholder="Buscar Ciudad"
           />
         </form>
-        <Hour></Hour>
+        <Hour>
+          <p>Made on react by axel</p>
+        </Hour>
       </SearchContainer>
       {!cities ? (
         <Wait>Ingrese una ciudad...</Wait>
